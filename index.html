@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1><img src="./images/logo.svg" alt="Splitter"></h1>
+    </header>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <main>
+      <form>
+        <label for="bill">Bill</label>
+        <input id="bill" type="number">
 
-  Bill
+        <fieldset>
+          <legend>Select Tip %</legend>
+          <input type="radio" id="fivePercent" name="tip" value="5">
+          <label for="fivePercent">5%</label>
+          <input type="radio" id="tenPercent" name="tip" value="10">
+          <label for="tenPercent">10%</label>
+          <input type="radio" id="fifteenPercent" name="tip" value="15">
+          <label for="fifteenPercent">15%</label>
+          <input type="radio" id="twentyfivePercent" name="tip" value="25">
+          <label for="twentyfivePercent">25%</label>
+          <input type="radio" id="fiftyPercent" name="tip" value="50">
+          <label for="fiftyPercent">50%</label>
+          <input type="radio" id="custum" name="tip" value="">
+          <input for="custum" type="number" placeholder="Custom">
+        </fieldset>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <label for="numberPeople">Number of People</label>
+        <input id="numberPeople" type="number">
 
-  Number of People
+        <div>
+          <p>Tip Amount <span>/ person</span></p>
+          <p>Total <span>/ person</span></p>
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <button>Reset</button>
+        </div>
+      </form>
+    </main>
+  </body>
 </html>
