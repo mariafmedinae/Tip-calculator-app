@@ -2,48 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tip Calculator App challenge from Frontend Mentor by Maria Fernanda Medina Eusse">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/main.css">
     
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
     <header>
-      <h1><img src="./images/logo.svg" alt="Splitter"></h1>
+      <h1><img src="./images/logo.svg" alt="Splitter" width="87" height="53"></h1>
     </header>
 
     <main>
-      <form>
-        <label for="bill">Bill</label>
-        <input id="bill" type="number">
+      <form id="tipCalculator">
+        <div class="values-section">
+          <label>Bill
+            <input id="bill" type="number" min="0" placeholder="0">
+          </label>        
+  
+          <fieldset>
+            <legend>Select Tip %</legend>   
+            <input type="radio" id="fivePercent" name="tip" value="5">       
+            <label for="fivePercent">5%</label>   
+            <input type="radio" id="tenPercent" name="tip" value="10">       
+            <label for="tenPercent">10%</label>  
+            <input type="radio" id="fifteenPercent" name="tip" value="15">        
+            <label for="fifteenPercent">15%</label> 
+            <input type="radio" id="twentyfivePercent" name="tip" value="25">         
+            <label for="twentyfivePercent">25%</label> 
+            <input type="radio" id="fiftyPercent" name="tip" value="50">         
+            <label for="fiftyPercent">50%</label>
+            <input type="number" placeholder="Custom" id="custom" min="0" max="100">
+          </fieldset>
+  
+          <label>Number of People
+            <input id="numberPeople" type="number" min="1" placeholder="0">
+          </label>
+        </div>        
 
-        <fieldset>
-          <legend>Select Tip %</legend>
-          <input type="radio" id="fivePercent" name="tip" value="5">
-          <label for="fivePercent">5%</label>
-          <input type="radio" id="tenPercent" name="tip" value="10">
-          <label for="tenPercent">10%</label>
-          <input type="radio" id="fifteenPercent" name="tip" value="15">
-          <label for="fifteenPercent">15%</label>
-          <input type="radio" id="twentyfivePercent" name="tip" value="25">
-          <label for="twentyfivePercent">25%</label>
-          <input type="radio" id="fiftyPercent" name="tip" value="50">
-          <label for="fiftyPercent">50%</label>
-          <input type="radio" id="custum" name="tip" value="">
-          <input for="custum" type="number" placeholder="Custom">
-        </fieldset>
-
-        <label for="numberPeople">Number of People</label>
-        <input id="numberPeople" type="number">
-
-        <div>
+        <div class="total-section">
           <p>Tip Amount <span>/ person</span></p>
+          <p id="tipAmountPerson" class="totals">0.00</p>
           <p>Total <span>/ person</span></p>
+          <p id="totalPerson" class="totals">0.00</p>
 
-          <button>Reset</button>
+          <button onclick="resetForm()">Reset</button>
         </div>
       </form>
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>

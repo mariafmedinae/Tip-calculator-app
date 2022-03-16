@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+$colors: (
+    "body-background": #C5E4E7,
+    "white-color": #FFFFFF, 
+    "total-background": #00474B,
+    "light-gray": #F3F9FA,
+    "labels-color": #5E7A7D,
+);

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #C5E4E7;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #5E7A7D;
+}
+
+header {
+  text-align: center;
+  margin: 50px 0 41px;
+}
+
+main {
+  background-color: #FFFFFF;
+  border-radius: 25px 25px 0px 0px;
+  padding: 32px;
+}
+
+/*
+
+fieldset > label {
+    background-color: map-get($colors, total-background);
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.total-section {
+    background-color: map-get($colors, total-background);
+    border-radius: 15px;
+}
+
+input[name="tip"]:checked + label{
+    color: red;
+}*/
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+input[type="number"] {
+  background-color: #F3F9FA;
+  margin-top: 6px;
+  text-align: right;
+  padding: 6px 17px;
+  color: #00474B;
+}
+
+#bill {
+  background: url(../images/icon-dollar.svg) no-repeat 19px center, #F3F9FA;
+}
+
+#numberPeople {
+  background: url(../images/icon-person.svg) no-repeat 19px center, #F3F9FA;
+}
+
+fieldset {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (48px)[3];
+  -ms-grid-columns: (1fr)[2];
+      grid-template: repeat(3, 48px)/repeat(2, 1fr);
+  gap: 16px 16.56px;
+  margin: 40px 0;
+}
+
+input, fieldset > label {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+fieldset > label, .total-section {
+  background-color: #00474B;
+}
+
+fieldset > label {
+  text-align: center;
+  padding: 6px 0;
+  color: #FFFFFF;
+}
+
+input[name="tip"] {
+  display: none;
+}
+
+input[name="tip"]:checked + label {
+  color: red;
+}
+
+input, fieldset > label, button {
+  border-radius: 5px;
+}
+
+p > span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.totals {
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+button {
+  font-size: 20px;
+  line-height: 1.5;
+}
+/*# sourceMappingURL=main.css.map */
