@@ -22,38 +22,31 @@ main {
     padding: 32px;
 }
 
-/*
-
-fieldset > label {
-    background-color: map-get($colors, total-background);
-    font-size: 24px;
-    line-height: 36px;
-}
-
-.total-section {
-    background-color: map-get($colors, total-background);
-    border-radius: 15px;
-}
-
-input[name="tip"]:checked + label{
-    color: red;
-}*/
-
 button, input, select, textarea {
     font-family: inherit;
     font-size: 100%;
 }
 
-input {
+input, button {
     width: 100%;
+    cursor: pointer;
+}
+
+input, button, fieldset > label {
+    cursor: pointer;
 }
 
 input[type="number"] {    
-    background-color: map-get($colors, light-gray);
-    margin-top: 6px;
+    background-color: map-get($colors, light-gray);    
     text-align: right;
     padding: 6px 17px;
     color: map-get($colors, total-background);
+    border: 2px solid transparent;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border: 2px solid map-get($colors, light-green);
 }
 
 #bill {
@@ -64,11 +57,18 @@ input[type="number"] {
     background: url(../images/icon-person.svg) no-repeat 19px center, map-get($colors, light-gray);
 }
 
+fieldset, label > input {
+    margin-bottom: 32px;
+}
+
+label > input {
+    margin-top: 6px;
+}
+
 fieldset {
     display: grid;
     grid-template: repeat(3, 48px) / repeat(2, 1fr);
     gap: 16px 16.56px;
-    margin: 40px 0;
 }
 
 input, fieldset > label {
@@ -80,35 +80,72 @@ fieldset > label, .total-section {
     background-color: map-get($colors, total-background);
 }
 
+fieldset > label, fieldset > input::placeholder {
+    text-align: center;
+}
+
 fieldset > label {
     text-align: center;
     padding: 6px 0;
+}
+
+fieldset > label, p {
     color: map-get($colors, white-color);
+}
+
+legend {
+    margin-bottom: 16px;
 }
 
 input[name="tip"] {
     display: none;
 }
 
-input[name="tip"]:checked + label{
-    color: red;
-}
-
 input, fieldset > label, button {
     border-radius: 5px;
 }
 
+fieldset > label:hover, button:hover {
+    background-color: map-get($colors, hover-green);
+    color: map-get($colors, total-background);
+    transition: ease all 0.3s;
+}
+
+.total-section {
+    border-radius: 15px;
+    padding: 37px 22px 24px 24px;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 20px 5px;
+}
+
 p > span {
     font-size: 13px;
-    line-height: 1.5;    
+    line-height: 1.5;  
+    display: block;
+    color: map-get($colors, gray-color);  
 }
 
 .totals {
     font-size: 32px;
-    line-height: 1.5;    
+    line-height: 1.5;  
+    color: map-get($colors, light-green);  
+    justify-self: end;    
+}
+
+button, input[name="tip"]:checked + label {
+    background-color: map-get($colors, light-green);
+    color: map-get($colors, total-background);
 }
 
 button {
     font-size: 20px;
     line-height: 1.5;
+    text-transform: uppercase;
+    background-color: map-get($colors, light-green);
+    color: map-get($colors, total-background);
+    padding: 9px 32px;
+    grid-column-start: 1;
+    grid-column-end: 3; 
+    margin-top: 12px;   
 }

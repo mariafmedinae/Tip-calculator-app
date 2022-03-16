@@ -31,37 +31,31 @@ main {
   padding: 32px;
 }
 
-/*
-
-fieldset > label {
-    background-color: map-get($colors, total-background);
-    font-size: 24px;
-    line-height: 36px;
-}
-
-.total-section {
-    background-color: map-get($colors, total-background);
-    border-radius: 15px;
-}
-
-input[name="tip"]:checked + label{
-    color: red;
-}*/
 button, input, select, textarea {
   font-family: inherit;
   font-size: 100%;
 }
 
-input {
+input, button {
   width: 100%;
+  cursor: pointer;
+}
+
+input, button, fieldset > label {
+  cursor: pointer;
 }
 
 input[type="number"] {
   background-color: #F3F9FA;
-  margin-top: 6px;
   text-align: right;
   padding: 6px 17px;
   color: #00474B;
+  border: 2px solid transparent;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border: 2px solid #26C2AE;
 }
 
 #bill {
@@ -72,6 +66,14 @@ input[type="number"] {
   background: url(../images/icon-person.svg) no-repeat 19px center, #F3F9FA;
 }
 
+fieldset, label > input {
+  margin-bottom: 32px;
+}
+
+label > input {
+  margin-top: 6px;
+}
+
 fieldset {
   display: -ms-grid;
   display: grid;
@@ -79,7 +81,6 @@ fieldset {
   -ms-grid-columns: (1fr)[2];
       grid-template: repeat(3, 48px)/repeat(2, 1fr);
   gap: 16px 16.56px;
-  margin: 40px 0;
 }
 
 input, fieldset > label {
@@ -91,36 +92,91 @@ fieldset > label, .total-section {
   background-color: #00474B;
 }
 
+fieldset > label, fieldset > input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+fieldset > label, fieldset > input:-ms-input-placeholder {
+  text-align: center;
+}
+
+fieldset > label, fieldset > input::-ms-input-placeholder {
+  text-align: center;
+}
+
+fieldset > label, fieldset > input::placeholder {
+  text-align: center;
+}
+
 fieldset > label {
   text-align: center;
   padding: 6px 0;
+}
+
+fieldset > label, p {
   color: #FFFFFF;
+}
+
+legend {
+  margin-bottom: 16px;
 }
 
 input[name="tip"] {
   display: none;
 }
 
-input[name="tip"]:checked + label {
-  color: red;
-}
-
 input, fieldset > label, button {
   border-radius: 5px;
+}
+
+fieldset > label:hover, button:hover {
+  background-color: #9FE8DF;
+  color: #00474B;
+  -webkit-transition: ease all 0.3s;
+  transition: ease all 0.3s;
+}
+
+.total-section {
+  border-radius: 15px;
+  padding: 37px 22px 24px 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+  -ms-grid-columns: (1fr)[2];
+      grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  gap: 20px 5px;
 }
 
 p > span {
   font-size: 13px;
   line-height: 1.5;
+  display: block;
+  color: #7F9D9F;
 }
 
 .totals {
   font-size: 32px;
   line-height: 1.5;
+  color: #26C2AE;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+button, input[name="tip"]:checked + label {
+  background-color: #26C2AE;
+  color: #00474B;
 }
 
 button {
   font-size: 20px;
   line-height: 1.5;
+  text-transform: uppercase;
+  background-color: #26C2AE;
+  color: #00474B;
+  padding: 9px 32px;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  margin-top: 12px;
 }
 /*# sourceMappingURL=main.css.map */
