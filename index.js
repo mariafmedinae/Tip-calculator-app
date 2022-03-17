@@ -16,8 +16,8 @@ function resetValues() {
 }
 
 function updateHTMLValues() {
-    document.getElementById("tipAmountPerson").innerHTML = tipAmountPerson.toFixed(2);
-    document.getElementById("totalPerson").innerHTML = totalPerson.toFixed(2);
+    document.getElementById("tipAmountPerson").innerHTML = `$ ${tipAmountPerson.toFixed(2)}`;
+    document.getElementById("totalPerson").innerHTML = `$ ${totalPerson.toFixed(2)}`;
 }
 
 function disableButton() {
