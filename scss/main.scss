@@ -101,11 +101,15 @@ input[name="tip"] {
     display: none;
 }
 
+button[disabled] {
+    opacity: 0.35;
+}
+
 input, fieldset > label, button {
     border-radius: 5px;
 }
 
-fieldset > label:hover, button:hover {
+fieldset > label:hover, button:hover:enabled {
     background-color: map-get($colors, hover-green);
     color: map-get($colors, total-background);
     transition: ease all 0.3s;
@@ -116,6 +120,7 @@ fieldset > label:hover, button:hover {
     padding: 37px 22px 24px 24px;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    align-items: center;
     gap: 20px 5px;
 }
 
@@ -124,6 +129,12 @@ p > span {
     line-height: 1.5;  
     display: block;
     color: map-get($colors, gray-color);  
+}
+
+#errorMessage {
+    display: none;
+    color: map-get($colors, error-color);
+    float: right;
 }
 
 .totals {
@@ -149,3 +160,5 @@ button {
     grid-column-end: 3; 
     margin-top: 12px;   
 }
+
+@import 'responsive';

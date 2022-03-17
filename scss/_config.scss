@@ -18,4 +18,17 @@ $colors: (
     "gray-color": #7F9D9F,
     "light-green": #26C2AE,
     "hover-green": #9FE8DF,
+    "error-color": #E17457,
 );
+
+@mixin small {
+    @media screen and (max-width: 374px) {
+        @content;        
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1440px) {
+        @content;        
+    }
+}

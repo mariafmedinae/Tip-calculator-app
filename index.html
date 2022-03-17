@@ -18,7 +18,7 @@
       <form id="tipCalculator">
         <div class="values-section">
           <label>Bill
-            <input id="bill" type="number" min="0" placeholder="0">
+            <input id="bill" type="number" min="0" placeholder="0" >
           </label>        
   
           <fieldset>
@@ -37,6 +37,7 @@
           </fieldset>
   
           <label>Number of People
+            <p id="errorMessage">Can’t be zero</p>
             <input id="numberPeople" type="number" min="1" placeholder="0">
           </label>
         </div>        
@@ -47,7 +48,7 @@
           <p>Total <span>/ person</span></p>
           <p id="totalPerson" class="totals">0.00</p>
 
-          <button onclick="resetForm()">Reset</button>
+          <button type="button" onclick="resetForm()" disabled>Reset</button>
         </div>
       </form>
     </main>

@@ -125,11 +125,15 @@ input[name="tip"] {
   display: none;
 }
 
+button[disabled] {
+  opacity: 0.35;
+}
+
 input, fieldset > label, button {
   border-radius: 5px;
 }
 
-fieldset > label:hover, button:hover {
+fieldset > label:hover, button:hover:enabled {
   background-color: #9FE8DF;
   color: #00474B;
   -webkit-transition: ease all 0.3s;
@@ -144,6 +148,9 @@ fieldset > label:hover, button:hover {
   -ms-grid-rows: (1fr)[2];
   -ms-grid-columns: (1fr)[2];
       grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 20px 5px;
 }
 
@@ -152,6 +159,12 @@ p > span {
   line-height: 1.5;
   display: block;
   color: #7F9D9F;
+}
+
+#errorMessage {
+  display: none;
+  color: #E17457;
+  float: right;
 }
 
 .totals {
@@ -178,5 +191,73 @@ button {
       grid-column-start: 1;
   grid-column-end: 3;
   margin-top: 12px;
+}
+
+@media screen and (max-width: 374px) {
+  .totals {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header {
+    margin: 163px 0 88px 0;
+  }
+  main {
+    width: 920px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.2);
+            box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.2);
+    padding: 32px 32px 32px 48px;
+  }
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .values-section {
+    width: 379px;
+    height: 388px;
+  }
+  fieldset {
+    -ms-grid-rows: (48px)[2];
+    -ms-grid-columns: (1fr)[3];
+        grid-template: repeat(2, 48px)/repeat(3, 1fr);
+    gap: 16px 14px;
+  }
+  fieldset > input[type="number"] {
+    padding: 6px 15px 6px 4px;
+  }
+  .total-section {
+    padding: 40px;
+    gap: 25px 5px;
+    width: 413px;
+  }
+  .totals {
+    font-size: 48px;
+  }
+  button {
+    margin-top: 97px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
